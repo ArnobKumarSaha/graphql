@@ -6,9 +6,14 @@ import (
 )
 
 func MakeNewSchema(fields graphql.Fields) graphql.Schema {
-	rootQuery := graphql.ObjectConfig{Name: "RootQuery", Fields: fields}
-	schemaConfig := graphql.SchemaConfig{Query: graphql.NewObject(rootQuery)}
-	schema, err := graphql.NewSchema(schemaConfig)
+	gObj := graphql.NewObject(graphql.ObjectConfig{
+		Name:   "RootQuery",
+		Fields: fields,
+	})
+
+	schema, err := graphql.NewSchema(graphql.SchemaConfig{
+		Query: gObj,
+	})
 	if err != nil {
 		log.Fatalf("failed to create new schema, error: %v", err)
 	}

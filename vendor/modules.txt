@@ -1,4 +1,4 @@
-# github.com/graphql-go/graphql v0.8.0
+# github.com/graphql-go/graphql v0.8.1
 ## explicit; go 1.13
 github.com/graphql-go/graphql
 github.com/graphql-go/graphql/gqlerrors
@@ -11,6 +11,6 @@ github.com/graphql-go/graphql/language/printer
 github.com/graphql-go/graphql/language/source
 github.com/graphql-go/graphql/language/typeInfo
 github.com/graphql-go/graphql/language/visitor
-# github.com/graphql-go/handler v0.2.3
-## explicit
+# github.com/graphql-go/handler v0.2.4
+## explicit; go 1.14
 github.com/graphql-go/handler
