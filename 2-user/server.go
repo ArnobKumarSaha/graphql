@@ -20,31 +20,6 @@ To try the simple example (users)
     }"
 }
 
-
-To try the book-author example
-> cat query.json
-{
-    "query": "{
-        author(id: 2) {
-            id
-            name
-            books {
-                title
-            }
-        }
-        book(id: 1) {
-            id
-            title
-            author {
-                name
-            }
-        }
-    }"
-}
-
-> In the above example, `author(id)` & `book(id)` is being resolved in fields.go
-> But, the internal `books {}` & `author {}` is being resolved in types.go file
-
 # Request
 curl -X POST -H "Content-Type: application/json" -d @query.json http://localhost:8080/graphql
 
@@ -52,7 +27,6 @@ curl -X POST -H "Content-Type: application/json" -d @query.json http://localhost
 
 func main() {
 	fields := getUserFields()
-	//fields := getAuthorAndBookFields()
 	schema := utils.MakeNewSchema(fields)
 
 	// Create a GraphQL handler
