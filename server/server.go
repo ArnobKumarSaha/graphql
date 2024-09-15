@@ -51,7 +51,8 @@ curl -X POST -H "Content-Type: application/json" -d @query.json http://localhost
 */
 
 func main() {
-	fields := getAuthorAndBookFields() // Or try simple -> getUserFields()
+	fields := getUserFields()
+	//fields := getAuthorAndBookFields()
 	schema := utils.MakeNewSchema(fields)
 
 	// Create a GraphQL handler
